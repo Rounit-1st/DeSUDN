@@ -1,0 +1,13 @@
+{
+  "software": "MyApp",
+  "version": "2.4.0",
+  "file": "update.bin",
+  "size": 524288000,
+  "chunk_size": 1048576,
+  "chunks": [
+    "sha256_hash_0",
+    "sha256_hash_1",
+    "sha256_hash_2"
+  ],
+  "signature": "3434535323wdmekfdmk3l43k"
+}

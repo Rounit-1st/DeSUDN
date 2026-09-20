@@ -1,0 +1,3 @@
+external program ---> trigger update system
+
+something like trigger_everthing.sh main_system_url
