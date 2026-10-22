@@ -44,8 +44,4 @@ def chunk_file(file, chunk_size=1024 * 1024):
 
             index += 1
 
-    with open(f"temp_buffer_hash", "w") as file:
-        file.write(buffer)
-
-
-chunk_file("new.tar.xz",chunk_size=10*1024*1024)
+    return buffer;

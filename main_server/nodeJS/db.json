@@ -1,0 +1,7 @@
+{
+    "software_123": {
+        "version_id": "1.0.1",
+        "torrent_file":"./torrent_store/software_123.torrent",
+        "signature" : "signature_123"
+    }
+}
