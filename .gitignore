@@ -1,0 +1,10 @@
+node_modules/
+dist/
+*.log
+.env
+.desudn/
+peer_storage/
+client_updates/
+storage/
+.DS_Store
+coverage/

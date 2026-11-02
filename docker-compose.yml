@@ -1,0 +1,90 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: desudn-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: desudn
+      POSTGRES_PASSWORD: desudn_secret
+      POSTGRES_DB: desudn
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/database/migrations/001_initial_schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./infrastructure/database/migrations/002_seed_data.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U desudn -d desudn"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  main-server:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.main-server
+    container_name: desudn-main-server
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    environment:
+      PORT: 4000
+      HOST: 0.0.0.0
+      DATABASE_URL: postgresql://desudn:desudn_secret@postgres:5432/desudn
+      JWT_SECRET: super-secret-desudn-jwt-token-key-32chars
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  dht-bootstrap:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.peer-node
+    container_name: desudn-dht-bootstrap
+    restart: unless-stopped
+    ports:
+      - "6000:6000/udp"
+    environment:
+      HOST: 0.0.0.0
+      PEER_PORT: 5000
+      DHT_PORT: 6000
+      PEER_STORAGE_DIR: /data/chunks
+
+  peer-node-1:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.peer-node
+    container_name: desudn-peer-node-1
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+      - "6001:6001/udp"
+    environment:
+      HOST: 0.0.0.0
+      PEER_PORT: 5001
+      DHT_PORT: 6001
+      DHT_BOOTSTRAP_NODES: dht-bootstrap:6000
+      PEER_STORAGE_DIR: /data/chunks
+    depends_on:
+      - dht-bootstrap
+
+  peer-node-2:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.peer-node
+    container_name: desudn-peer-node-2
+    restart: unless-stopped
+    ports:
+      - "5002:5002"
+      - "6002:6002/udp"
+    environment:
+      HOST: 0.0.0.0
+      PEER_PORT: 5002
+      DHT_PORT: 6002
+      DHT_BOOTSTRAP_NODES: dht-bootstrap:6000
+      PEER_STORAGE_DIR: /data/chunks
+    depends_on:
+      - dht-bootstrap
+
+volumes:
+  postgres_data:

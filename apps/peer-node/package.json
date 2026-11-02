@@ -1,0 +1,12 @@
+{
+  "name": "@desudn/peer-node",
+  "version": "1.0.0",
+  "description": "DeSUDN P2P Peer Node and DHT participant daemon",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/dht-discovery": "1.0.0",
+    "@desudn/p2p-network": "1.0.0",
+    "dotenv": "^16.4.7"
+  }
+}

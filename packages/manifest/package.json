@@ -1,0 +1,10 @@
+{
+  "name": "@desudn/manifest",
+  "version": "1.0.0",
+  "description": "Signed update manifest generation and validation for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0"
+  }
+}

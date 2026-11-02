@@ -1,0 +1,50 @@
+{
+  "name": "desudn",
+  "version": "1.0.0",
+  "description": "Decentralized Software Update Distribution Network",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:e2e": "tsx tests/e2e/e2e.test.ts",
+    "demo": "tsx scripts/demo.ts",
+    "server": "tsx apps/main-server/src/index.ts",
+    "peer": "tsx apps/peer-node/src/index.ts",
+    "uploader": "tsx apps/uploader/src/index.ts",
+    "updater": "tsx apps/update-client/src/index.ts",
+    "migrate": "tsx infrastructure/database/migrate.ts"
+  },
+  "keywords": [
+    "p2p",
+    "dht",
+    "kademlia",
+    "software-update",
+    "bsdiff",
+    "decentralized"
+  ],
+  "author": "DeSUDN Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.10.1",
+    "@types/pg": "^8.11.10",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

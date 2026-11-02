@@ -1,0 +1,13 @@
+{
+  "name": "@desudn/downloader",
+  "version": "1.0.0",
+  "description": "Concurrent P2P chunk downloader with state machine and resumption for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/chunker": "1.0.0",
+    "@desudn/dht-discovery": "1.0.0",
+    "@desudn/p2p-network": "1.0.0"
+  }
+}

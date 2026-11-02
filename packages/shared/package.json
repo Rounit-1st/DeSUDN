@@ -1,0 +1,10 @@
+{
+  "name": "@desudn/shared",
+  "version": "1.0.0",
+  "description": "Shared types and utilities for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc"
+  }
+}

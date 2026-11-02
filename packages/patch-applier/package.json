@@ -1,0 +1,12 @@
+{
+  "name": "@desudn/patch-applier",
+  "version": "1.0.0",
+  "description": "Transactional safe update applier with staging, backups, and rollback for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/diff-engine": "1.0.0",
+    "@desudn/integrity": "1.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@desudn/diff-engine",
+  "version": "1.0.0",
+  "description": "Binary diff and patch engine for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0"
+  }
+}

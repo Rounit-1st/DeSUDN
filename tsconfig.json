@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@desudn/shared": ["packages/shared/src/index.ts"],
+      "@desudn/diff-engine": ["packages/diff-engine/src/index.ts"],
+      "@desudn/chunker": ["packages/chunker/src/index.ts"],
+      "@desudn/manifest": ["packages/manifest/src/index.ts"],
+      "@desudn/dht-discovery": ["packages/dht-discovery/src/index.ts"],
+      "@desudn/p2p-network": ["packages/p2p-network/src/index.ts"],
+      "@desudn/downloader": ["packages/downloader/src/index.ts"],
+      "@desudn/integrity": ["packages/integrity/src/index.ts"],
+      "@desudn/patch-applier": ["packages/patch-applier/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "**/*.test.ts"]
+}

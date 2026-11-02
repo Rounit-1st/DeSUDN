@@ -1,0 +1,11 @@
+{
+  "name": "@desudn/integrity",
+  "version": "1.0.0",
+  "description": "Multi-layer integrity verification for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/manifest": "1.0.0"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@desudn/update-client",
+  "version": "1.0.0",
+  "description": "DeSUDN Software Update Client",
+  "main": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/manifest": "1.0.0",
+    "@desudn/dht-discovery": "1.0.0",
+    "@desudn/p2p-network": "1.0.0",
+    "@desudn/downloader": "1.0.0",
+    "@desudn/integrity": "1.0.0",
+    "@desudn/patch-applier": "1.0.0",
+    "dotenv": "^16.4.7"
+  }
+}

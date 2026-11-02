@@ -1,0 +1,11 @@
+{
+  "name": "@desudn/p2p-network",
+  "version": "1.0.0",
+  "description": "P2P chunk storage, peer server, and chunk transfer for DeSUDN",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@desudn/shared": "1.0.0",
+    "@desudn/dht-discovery": "1.0.0"
+  }
+}
