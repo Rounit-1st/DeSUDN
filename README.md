@@ -1,6 +1,7 @@
 # DeSUDN — Decentralized Software Update Distribution Network
 
-DeSUDN is a peer-to-peer (P2P) software update distribution system designed to reduce dependence on a central server. It divides software updates into smaller chunks that can be downloaded from multiple peers instead of requiring every client to download the entire update from the main server.
+DeSUDN is a peer-to-peer (P2P) software update distribution system designed to reduce dependence on a central server. It divides software updates into smaller chunks that can be downloaded from multiple peers instead of requiring every client to download the entire update from the main server. 
+( THIS BRANCH IS NOT MAINTAINED CHECKOUT MASTER BRANCH )
 
 ## 1. System Architecture
 
